@@ -1,25 +1,32 @@
 public class Main extends Object{
-    public static void main(String[] args) {
+    public static void main(String[] ars) {
         Student max = new Student("Max",21);
         System.out.println(max);
 
-        primarySchoolStudent jimmy = new primarySchoolStudent("Jimmy",22,"Sang");
+        PrimarySchoolStudent jimmy = new PrimarySchoolStudent("Jimmy",23,"Carole");
         System.out.println(jimmy);
+
     }
 }
+
 class Student{
     private String name;
     private int age;
 
-
-    Student(String name,int age) {
-        this.name= name;
-        this.age =age;
+    Student(String name, int age) {
+        this.name = name;
+        this.age = age;
     }
+
+//    @Override
+//    public String toString() {
+//        return super.toString();
+//    }
+
 
     @Override
     public String toString() {
-        return name + " is "+age;
+        return name + " is "+ age;
 //        return "Student{" +
 //                "name='" + name + '\'' +
 //                ", age=" + age +
@@ -27,17 +34,15 @@ class Student{
     }
 }
 
-class primarySchoolStudent extends Student{
+class PrimarySchoolStudent extends Student{
     private String parentName;
-
-    primarySchoolStudent(String name ,int age ,String parentName) {
+    PrimarySchoolStudent(String name,int age, String parentName) {
         super(name,age);
-        this.parentName =parentName;
-
+        this.parentName = parentName;
     }
 
     @Override
     public String toString() {
-        return parentName + "'s kid ," +super.toString();
+        return parentName + "'s kid, " +super.toString();
     }
 }
